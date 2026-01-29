@@ -1,14 +1,12 @@
 # Waitlist Page Generator
 
-A config-driven waitlist landing page built with Next.js, TypeScript, Tailwind CSS, and Prisma Postgres. Edit markdown and JSON config files, then use the included Cursor skill to generate your page.
+A waitlist landing page built with Next.js, TypeScript, Tailwind CSS, and Prisma Postgres.
 
 ## Features
 
-- **Config-driven content**: Mission, problem, solution, and style live in `/config`
-- **Dark gradient boilerplate**: Ready-made landing page with Hero, Problem, Solution, and CTA
+- **Dark gradient boilerplate**: Ready-made landing page with Hero and CTA
 - **Waitlist signups**: Email form with Prisma Postgres storage
 - **Spam protection**: Honeypot, rate limiting, timing check, and email validation
-- **Cursor skill**: Generate the page from config files without editing components by hand
 
 ## Quick Start
 
@@ -42,20 +40,8 @@ A config-driven waitlist landing page built with Next.js, TypeScript, Tailwind C
 
 ## How to Customize
 
-1. **Edit config files** in `/config`:
-   - `mission.md` – Hero headline, subheadline, CTA text
-   - `problem.md` – Pain points section
-   - `solution.md` – How you solve it and feature tags
-   - `style.json` – Colors (primary, secondary, background, text), fonts, preset
-   - `meta.json` – Site title, description, OG image, favicon
+Edit the landing page content and styles in `app/page.tsx` and `app/globals.css`. Form logic, API route, and spam protection live in `components/WaitlistForm.tsx` and `app/api/waitlist/route.ts`.
 
-2. **Generate the page**  
-   In Cursor, run the **generate-waitlist** skill or say: *"Generate my waitlist page from the config files."*  
-   The skill reads the config and updates the landing page components and styles.
-
-3. **Do not edit** the form logic, API route, or spam protection unless you know what you’re doing; the skill is designed to leave those unchanged.
-
-See `config/README.md` for a full description of each config file.
 
 ## Scripts
 
