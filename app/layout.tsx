@@ -10,9 +10,11 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const BRAND_NAME = "Brand Name";
+
 export const metadata: Metadata = {
-  title: "Join the Waitlist",
-  description: "Get early access. Join the waitlist.",
+  title: BRAND_NAME,
+  description: "Your unique value proposition - How do you deliver on your why? What makes you different?",
 };
 
 const themeScript = `
@@ -33,7 +35,8 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
         <ThemeProvider>
-          <header className="fixed right-4 top-4 z-10">
+          <header className="fixed left-0 right-0 top-0 z-10 flex items-center justify-between px-4 py-4 md:px-6">
+            <span className="text-lg font-semibold text-[var(--foreground)]">{BRAND_NAME}</span>
             <ThemeToggle />
           </header>
           {children}
