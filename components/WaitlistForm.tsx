@@ -59,8 +59,44 @@ export default function WaitlistForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-green-500/30 bg-green-500/10 px-6 py-8 text-center">
-        <p className="text-lg font-medium text-green-400">{message}</p>
+      <div className="animate-fadeInZoom">
+        <div className="relative overflow-hidden rounded-2xl border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/20 via-[var(--secondary)]/10 to-transparent p-8 text-center shadow-2xl backdrop-blur-sm">
+          {/* Animated glow effect */}
+          <div className="absolute -inset-1 -z-10 animate-pulse rounded-2xl bg-gradient-to-r from-[var(--primary)]/30 to-[var(--secondary)]/30 blur-2xl"></div>
+          
+          {/* Success icon with animation */}
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] shadow-lg shadow-[var(--primary)]/50">
+            <svg
+              className="h-8 w-8 text-white animate-checkmark"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          
+          {/* Message with staggered animation */}
+          <h3 className="mb-2 text-2xl font-bold text-[var(--foreground)] animate-slideUp" style={{ animationDelay: '0.1s' }}>
+            You're on the list!
+          </h3>
+          <p className="text-base text-[var(--muted-foreground)] animate-slideUp" style={{ animationDelay: '0.2s' }}>
+            We'll be in touch soon. Check your inbox for updates.
+          </p>
+          
+          {/* Decorative sparkles with bounce animation */}
+          <div className="mt-6 flex justify-center gap-2 opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>
+            <span className="text-2xl animate-bounce" style={{ animationDelay: '0ms' }}>✨</span>
+            <span className="text-2xl animate-bounce" style={{ animationDelay: '150ms' }}>🎉</span>
+            <span className="text-2xl animate-bounce" style={{ animationDelay: '300ms' }}>✨</span>
+          </div>
+        </div>
       </div>
     );
   }
