@@ -7,17 +7,17 @@ export default function Home() {
         <div className="absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl mb-16">
-            Your purpose, cause, or belief -{" "}
+            Making{" "}
             <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-              Why does your company exist
+              waitlist pages
             </span>{" "}
-            beyond making money?
+            easier for entrepreneurs
           </h1>
           <p className="mx-auto max-w-2xl mt-6 text-lg text-[var(--muted-foreground)] md:text-xl">
-            Your unique value proposition - How do you deliver on your why? What makes you different?
+            Providing a way to create instant waitlist pages with a form and a call to action.
           </p>
           <p className="mx-auto max-w-3xl mt-8 text-[var(--foreground)]/90">
-            Your product/service - What do you actually make/offer? Be specific and tangible. Be the first to know when we launch.
+            We provide a ready to use waitlist page with a form and a call to action. Be the first to know when we launch.
           </p>
           <div className="mt-12">
             <WaitlistForm />

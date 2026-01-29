@@ -10,11 +10,11 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const BRAND_NAME = "Brand Name";
+const BRAND_NAME = "Front Row";
 
 export const metadata: Metadata = {
   title: BRAND_NAME,
-  description: "Your unique value proposition - How do you deliver on your why? What makes you different?",
+  description: "Providing a way to create instant waitlist pages with a form and a call to action.",
 };
 
 const themeScript = `
