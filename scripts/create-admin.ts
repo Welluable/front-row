@@ -31,16 +31,17 @@ async function main() {
   const prisma = createPrismaClient();
 
   try {
+    const deleted = await prisma.user.deleteMany({
+      where: { role: "admin" },
+    });
+    if (deleted.count > 0) {
+      console.log(`Removed ${deleted.count} existing admin(s).`);
+    }
+
     const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
 
-    const user = await prisma.user.upsert({
-      where: { email: email.toLowerCase() },
-      update: {
-        passwordHash,
-        name,
-        role: "admin",
-      },
-      create: {
+    const user = await prisma.user.create({
+      data: {
         email: email.toLowerCase(),
         passwordHash,
         name,
@@ -48,9 +49,7 @@ async function main() {
       },
     });
 
-    console.log(
-      `Admin user ${user.id} (${user.email}) has been created or updated.`
-    );
+    console.log(`Admin user ${user.id} (${user.email}) has been created.`);
   } catch (err) {
     console.error("Failed to create/update admin user:", err);
     process.exit(1);
